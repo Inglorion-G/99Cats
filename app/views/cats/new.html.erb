@@ -1,12 +1,50 @@
 <form action="<%= new_cat_url %>" method="post">
-  <label for="cat_name">Name</label>
-  <input type="text" name="cat[name]" id="cat_name">
-  <label for="cat_age">Age</label>
-  <input type="text" name="cat[age]" id="cat_age">
-  <label for="cat_sex">Sex</label>
-  <input type="text" name="cat[sex]" id="cat_sex">
-  <label for="cat_color">Color</label>
-  <input type="text" name="cat[color]" id="cat_color">
+  <table>
+    <tr>
+      <td><label for="cat_name"><strong>Name</strong></label></td>
+      <td><input type="text" name="cat[name]" id="cat_name"></td>
+    </tr>
+    <tr>
+      <td><label for="cat_age"><strong>Age</strong></label></td>
+      <td><input type="text" name="cat[age]" id="cat_age"></td>
+    </tr>
+    <tr>
+      <td><strong>Sex</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="radio" name="cat[sex]" id="cat_sex_female" value="F"></td>
+      <td><label for="cat_sex_female">Female</label></td>
+    </tr>
+    <tr>
+      <td><input type="radio" name="cat[sex]" id="cat_sex_male" value="M">
+</td>
+      <td><label for="cat_sex_male">Male</label></td>
+    </tr>
+    <tr>
+      <td><label for="cat_color"><strong>Color</strong></label></td>
 
+      <td>
+        <select name="cat[coat_color]" id="cat_coat_color">
+          <option></option>
+          <option value="brown">Brown</option>
+          <option value="black">Black</option>
+          <option value="blue">Blue</option>
+          <option value="white">White</option>
+          <option value="orange">Orange</option>
+        </select>
+      </td>
+
+    </tr>
+    <tr>
+      <td><label for="cat_birth_date"><strong>Birth Date</strong></label></td>
+
+      <td>
+        <input type="date" name="cat[birth_date]" value="" id="cat_birth_date">
+      </td>
+
+    </tr>
+  </table>
   <input type="submit" value="Create Cat">
+
 </form>

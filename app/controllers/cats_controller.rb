@@ -7,4 +7,8 @@ class CatsController < ApplicationController
   def show
   end
 
+  def new
+    @cat = Cat.new(params[:cat])
+  end
+
 end
