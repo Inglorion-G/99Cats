@@ -5,14 +5,35 @@ class CatsController < ApplicationController
   end
 
   def show
+    @cat = Cat.find(params[:id])
   end
 
   def new
-    @cat = Cat.new(params[:cat])
+    @cat = Cat.new(cat_params)
   end
 
   def edit
     @cat = Cat.find(params[:id])
+  end
+
+  def update
+    @cat = Cat.new(cat_params)
+    if @cat.valid?
+      @cat.update
+      redirect_to cat_url(@cat)
+    else
+      @cat.errors.full_messages
+    end
+  end
+
+  def create
+    @cat = Cat.new(cat_params)
+    if @cat.valid?
+      @cat.save!
+      redirect_to cat_url(@cat)
+    else
+      @cat.errors.full_messages
+    end
   end
 
   private

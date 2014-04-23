@@ -1,4 +1,4 @@
-<form action="<%= cat.persisted? ? cat_url(cat) : new_cat_url %>" method="post">
+<form action="<%= cat.persisted? ? cat_url(cat) : cats_url %>" method="post">
   <% if cat.persisted? %>
   <input type="hidden" name="_method" value="PATCH">
   <% end %>
@@ -30,14 +30,14 @@
       <td><label for="cat_color"><strong>Color</strong></label></td>
 
       <td>
-        <select name="cat[coat_color]" id="cat_coat_color">
+        <select name="cat[color]" id="cat_color">
           <option></option>
-          <option value="brown" <% if cat.color == "brown" %> checked=1 <% end %>>Brown</option>
-          <option value="black" <% if cat.color == "black" %> checked=1 <% end %>>Black</option>
-          <option value="blue" <% if cat.color == "blue" %> checked=1 <% end %>>Blue</option>
-          <option value="white" <% if cat.color == "white" %> checked=1 <% end %>>White</option>
-          <option value="orange" <% if cat.color == "orange" %> checked=1 <% end %>>Orange</option>
-          <option value="tabby" <% if cat.color == "tabby" %> checked=1 <% end %>>Tabby</option>
+          <option value="brown" <% if cat.color == "brown" %> selected <% end %>>Brown</option>
+          <option value="black" <% if cat.color == "black" %> selected <% end %>>Black</option>
+          <option value="blue" <% if cat.color == "blue" %> selected <% end %>>Blue</option>
+          <option value="white" <% if cat.color == "white" %> selected <% end %>>White</option>
+          <option value="orange" <% if cat.color == "orange" %> selected <% end %>>Orange</option>
+          <option value="tabby" <% if cat.color == "tabby" %> selected <% end %>>Tabby</option>
         </select>
       </td>
     </tr>
