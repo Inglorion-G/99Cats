@@ -1,8 +1,12 @@
 <form action="<%= new_cat_url %>" method="post">
-  <input type="text" name="cat[name]">
-  <input type="text" name="cat[age]">
-  <input type="text" name="cat[sex]">
-  <input type="text" name="cat[color]">
+  <label for="cat_name">Name</label>
+  <input type="text" name="cat[name]" id="cat_name">
+  <label for="cat_age">Age</label>
+  <input type="text" name="cat[age]" id="cat_age">
+  <label for="cat_sex">Sex</label>
+  <input type="text" name="cat[sex]" id="cat_sex">
+  <label for="cat_color">Color</label>
+  <input type="text" name="cat[color]" id="cat_color">
 
   <input type="submit" value="Create Cat">
 </form>
