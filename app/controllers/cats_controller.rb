@@ -17,9 +17,9 @@ class CatsController < ApplicationController
   end
 
   def update
-    @cat = Cat.new(cat_params)
+    @cat = Cat.find(params[:id])
     if @cat.valid?
-      @cat.update
+      @cat.update(cat_params)
       redirect_to cat_url(@cat)
     else
       @cat.errors.full_messages

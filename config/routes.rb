@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   resources :cats
 
+  resources :cat_rental_requests do
+    post 'approve', on: :member
+    post 'deny', on: :member
+  end
+
   root 'cats#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
